@@ -11,11 +11,17 @@
   },
   "observability": {
     "enabled": true
-  }
+  },
+  // Custom domains. Cloudflare manages the DNS record for each of these.
+  "routes": [
+    { "pattern": "prashantphuyal.com", "custom_domain": true },
+    { "pattern": "www.prashantphuyal.com", "custom_domain": true }
+  ]
   // Secrets are NOT set here. Add them in the Cloudflare dashboard, or:
   //   npx wrangler secret put AWS_ACCESS_KEY_ID
   //   npx wrangler secret put AWS_SECRET_ACCESS_KEY
-  //   npx wrangler secret put SES_FROM_EMAIL
-  //   npx wrangler secret put LEAD_NOTIFY_EMAIL
   //   npx wrangler secret put AWS_REGION
+  //   npx wrangler secret put MAIL_FROM
+  //   npx wrangler secret put MAIL_FROM_NAME
+  //   npx wrangler secret put LEAD_NOTIFY_EMAIL
 }
