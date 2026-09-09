@@ -1,0 +1,21 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "prashantphuyal",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2026-09-01",
+  // nodejs_compat is required by the OpenNext adapter.
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "observability": {
+    "enabled": true
+  }
+  // Secrets are NOT set here. Add them in the Cloudflare dashboard, or:
+  //   npx wrangler secret put AWS_ACCESS_KEY_ID
+  //   npx wrangler secret put AWS_SECRET_ACCESS_KEY
+  //   npx wrangler secret put SES_FROM_EMAIL
+  //   npx wrangler secret put LEAD_NOTIFY_EMAIL
+  //   npx wrangler secret put AWS_REGION
+}
